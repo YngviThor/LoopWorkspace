@@ -53,6 +53,8 @@ platform :ios do
     
     match(
       type: "appstore",
+      force_for_new_devices: true,  # Force update the profiles
+      force: true,                  # Force update the profiles
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
       app_identifier: [
         "com.#{TEAMID}.loopkit.Loop", 
